@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code, Zap, Target } from 'lucide-react';
+import { Code, Zap, Target , Palette , Lightbulb } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import CVFile from '../assets/Chamindu_Nevandith_CV.pdf';
 
@@ -35,38 +35,38 @@ const About = () => {
   };
 
   const features = [
-    {
-      icon: Code,
-      title: "Clean Code",
-      description: "Writing maintainable, scalable, and efficient code following industry best practices.",
-    },
-    {
-      icon: Zap,
-      title: "Fast & Efficient",
-      description: "Building high-performance applications that provide excellent user experiences.",
-    },
-    {
-      icon: Target,
-      title: "Problem Solving",
-      description: "Tackling complex challenges with creative solutions and innovative approaches.",
-    },
-  ];
+  {
+    icon: Palette,
+    title: "Design Tools",
+    description:
+      "Creating UI designs, wireframes, prototypes, and layouts using Figma, Canva, Auto Layout, and reusable components.",
+  },
+  {
+    icon: Zap,
+    title: "Clean & Modern UI",
+    description:
+      "Designing visually appealing interfaces with clear layouts and consistent design.",
+  },
+  {
+    icon: Lightbulb,
+    title: "Creative Problem Solving",
+    description:
+      "Turning ideas and user problems into practical and effective design solutions.",
+  },
+];
 
   return (
-    <section id="about" className="py-20 bg-slate-50 dark:bg-slate-900/50 backdrop-blur-sm transition-colors duration-300">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-2 bg-[#B9D7EA] backdrop-blur-sm transition-colors duration-300">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 bg-[#D6E6F2] p-4 rounded-2xl">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 transition-colors duration-300">
-            About <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">Me</span>
-          </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
+
         </motion.div>
 
         {/* Content Grid */}
@@ -79,12 +79,17 @@ const About = () => {
         >
           {/* Left Content */}
           <motion.div variants={itemVariants} className="space-y-6">
-            <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed transition-colors duration-300">
-            I'm a passionate Software Engineer specializing in modern web development using React.js, Node.js, and other modern technologies. I focus on building scalable, high-performance applications with intuitive user experiences and clean, maintainable code. With strong frontend and backend development skills, I enjoy turning ideas into efficient and reliable software solutions.
+
+            <h2 className="text-4xl md:text-5xl font-bold text-[#111e2e]  mb-4 transition-colors duration-300">
+            About Me 
+          </h2>
+          
+            <p className="text-lg font-medium text-[#364e6b] duration-300">
+              I’m a passionate UI/UX Designer who enjoys creating clean, simple, and user-friendly digital experiences. I focus on understanding user needs and turning ideas into intuitive designs that are both visually appealing and easy to use.
             </p>
 
-            <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed transition-colors duration-300">
-              I have hands-on experience developing responsive and dynamic applications using React.js on the frontend and Node.js on the backend, ensuring clean code, efficient performance, and scalable system design. I’m committed to following industry best practices and continuously improving my skills by exploring modern technologies and development patterns.
+            <p className="text-lg font-medium text-[#364e6b] duration-300">
+              I have experience designing responsive web and mobile interfaces, creating wireframes, prototypes, and user flows using tools like Figma. I always try to keep my designs practical, consistent, and focused on making the overall user experience better.
             </p>
 
             {/* <p className="text-lg text-slate-300 leading-relaxed">
@@ -95,7 +100,7 @@ const About = () => {
               onClick={handleDownloadCV}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300 font-semibold cursor-pointer"
+              className="px-8 py-3 bg-[#1e3550] text-[#B9D7EA] rounded-full hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300 font-semibold cursor-pointer"
             >
               Download Resume
             </motion.button>
@@ -109,22 +114,15 @@ const About = () => {
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className="rounded-xl p-6 hover:border-blue-500/50 transition-all duration-300 border"
-                  style={{
-                    background: theme === 'dark'
-                      ? 'linear-gradient(to bottom right, rgb(30, 41, 59) 0%, rgb(15, 23, 42) 100%)'
-                      : 'linear-gradient(to bottom right, rgb(241, 245, 250) 0%, rgb(250, 250, 250) 100%)',
-                    borderColor: theme === 'dark' ? 'rgb(51, 65, 85)' : 'rgb(203, 213, 225)',
-                    transition: 'all 300ms'
-                  }}
+                  className="rounded-xl p-6 bg-[#B9D7EA] "
                 >
                   <div className="flex gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500/20 to-purple-600/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Icon className="text-blue-400" size={24} />
+                    <div className="w-12 h-12 bg-[#1e3550] rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Icon className="text-white" size={24} />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2 transition-colors duration-300">{feature.title}</h3>
-                      <p className="text-slate-700 dark:text-slate-400 transition-colors duration-300">{feature.description}</p>
+                      <h3 className="text-xl font-semibold text-[#111e2e] mb-2 transition-colors duration-300">{feature.title}</h3>
+                      <p className="text-[#364e6b] transition-colors duration-300">{feature.description}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -133,7 +131,7 @@ const About = () => {
           </div>
         </motion.div>
 
-        {/* Stats */}
+        {/* Stats
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -163,7 +161,7 @@ const About = () => {
               <p className="text-slate-700 dark:text-slate-400 transition-colors duration-300">{stat.label}</p>
             </div>
           ))}
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );
