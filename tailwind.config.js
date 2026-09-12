@@ -9,6 +9,9 @@ export default {
     'html.dark'
   ],
   theme: {
+    fontFamily: {
+      sans: ['Poppins', 'sans-serif'],
+    },
     extend: {},
   },
   plugins: [],
