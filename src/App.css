@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+/* App-specific custom styles */
+/* This file is primarily for Tailwind CSS imports */
+/* All component-specific styles should use Tailwind utility classes */
