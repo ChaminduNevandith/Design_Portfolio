@@ -58,7 +58,7 @@ const Navbar = () => {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="px-4 py-2 text-[#000b13] transition-colors duration-300"
+                className="px-4 py-2 font-semibold text-[#1e3550] transition-colors duration-300"
               >
                 {item.title}
               </motion.a>
@@ -73,7 +73,7 @@ const Navbar = () => {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className="px-6 py-2 bg-[#1e3550] text-[#B9D7EA] rounded-full"
+              className="px-6 py-2 bg-[#1e3550] font-semibold text-[#B9D7EA] rounded-full"
             >
               Contact Me
             </motion.a>
