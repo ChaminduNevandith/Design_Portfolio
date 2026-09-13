@@ -1,176 +1,108 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { skills } from '../data/portfolioData';
-import { useTheme } from '../context/ThemeContext';
+import React from "react";
+import { motion } from "framer-motion";
+import { SiFigma, SiCanva } from "react-icons/si";
+
 import {
-  SiReact,
-  SiJavascript,
-  SiTailwindcss,
-  SiHtml5,
-  SiFramer,
-  SiNextdotjs,
-  SiNodedotjs,
-  SiExpress,
-  SiPython,
-  SiMongodb,
-  SiMysql,
-  SiFirebase,
-  SiGithub,
-  SiFigma,
-  SiCanva,
-} from 'react-icons/si';
-import { Code, Lock, Globe, Smartphone, Palette, Lightbulb, Monitor } from 'lucide-react';
+  Layout,
+  Smartphone,
+  Component,
+  MousePointerClick,
+  Workflow,
+  Palette,
+  Search,
+  Users,
+} from "lucide-react";
 
 const Skills = () => {
-  const { theme } = useTheme();
-
-  const renderTechIcon = (name) => {
-    const iconProps = {
-      size: 48,
-      className: "text-blue-500 dark:text-blue-400"
-    };
-
-    const iconMap = {
-      "React": <SiReact {...iconProps} />,
-      "JavaScript": <SiJavascript {...iconProps} />,
-      "Tailwind CSS": <SiTailwindcss {...iconProps} />,
-      "HTML/CSS": <SiHtml5 {...iconProps} />,
-      "Framer Motion": <SiFramer {...iconProps} />,
-      "Next.js": <SiNextdotjs {...iconProps} />,
-      "Node.js": <SiNodedotjs {...iconProps} />,
-      "Express": <SiExpress {...iconProps} />,
-      "Python": <SiPython {...iconProps} />,
-      "MongoDB": <SiMongodb {...iconProps} />,
-      "MySQL": <SiMysql {...iconProps} />,
-      "Firebase": <SiFirebase {...iconProps} />,
-      "Git/GitHub": <SiGithub {...iconProps} />,
-      "VS Code": <Monitor {...iconProps} />,
-      "Figma": <SiFigma {...iconProps} />,
-      "Canva": <SiCanva {...iconProps} />,
-      "REST APIs": <Code {...iconProps} />,
-      "Authentication": <Lock {...iconProps} />,
-      "Full-Stack Development": <Globe {...iconProps} />,
-      "Responsive Design": <Smartphone {...iconProps} />,
-      "UI/UX Design": <Palette {...iconProps} />,
-      "Problem Solving": <Lightbulb {...iconProps} />,
-    };
-
-    return iconMap[name] || <span className="text-3xl">⚙️</span>;
-  };
-
-  const skillCategories = [
-    { title: "Frontend", skills: skills.frontend },
-    { title: "Backend", skills: skills.backend },
-    { title: "Database", skills: skills.database },
-    { title: "Tools & DevOps", skills: skills.tools },
-    { title: "Other", skills: skills.other },
+  const skills = [
+    { name: "Figma", icon: SiFigma },
+    { name: "Canva", icon: SiCanva },
+    { name: "UI Design", icon: Palette },
+    { name: "Responsive Design", icon: Smartphone },
+    { name: "Auto Layout", icon: Layout },
+    { name: "Components", icon: Component },
+    { name: "Prototyping", icon: MousePointerClick },
+    { name: "User Flows", icon: Workflow },
+    { name: "User Research", icon: Search },
+    { name: "Usability Testing", icon: Users },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.05,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: { duration: 0.4 },
-    },
-  };
-
   return (
-    <section id="skills" className="py-20 bg-white dark:bg-slate-950 transition-colors duration-300">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+    <section id="skills" className="py-12 bg-[#B9D7EA]">
+
+      
+      <div className="max-w-5xl mx-auto px-4 sm:px-6">
+
+        {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 transition-colors duration-300">
-            Skills & <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">Technologies</span>
-          </h2>
-          <p className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto transition-colors duration-300">
-            Technologies and frameworks I use to build modern, scalable applications
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#364E6B]/60 mb-2">
+            What I Work With
           </p>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full mt-4"></div>
+
+          <h2 className="text-3xl md:text-4xl font-bold text-[#364E6B]">
+            Skills & Tools
+          </h2>
+
+          <p className="text-[#364E6B]/70 mt-3 text-sm md:text-base max-w-xl mx-auto">
+            A few tools and design skills I use to create clean and
+            user-friendly digital experiences.
+          </p>
         </motion.div>
 
-        {/* Tech Categories Grid */}
-        <div className="space-y-12">
-          {skillCategories.map((category, catIndex) => (
-            <motion.div
-              key={catIndex}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: catIndex * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-6 transition-colors duration-300">
-                {category.title}
-              </h3>
-
-              <motion.div
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
-              >
-                {category.skills.map((skill, index) => (
-                  <motion.div
-                    key={index}
-                    variants={itemVariants}
-                    whileHover={{ scale: 1.08, y: -5 }}
-                    className="group rounded-xl p-6 border flex flex-col items-center justify-center text-center cursor-pointer transition-all duration-300"
-                    style={{
-                      background: theme === 'dark'
-                        ? 'linear-gradient(to bottom right, rgb(30, 41, 59) 0%, rgb(15, 23, 42) 100%)'
-                        : 'linear-gradient(to bottom right, rgb(241, 245, 250) 0%, rgb(250, 250, 250) 100%)',
-                      borderColor: theme === 'dark' ? 'rgb(51, 65, 85)' : 'rgb(203, 213, 225)',
-                    }}
-                  >
-                    <div className="mb-3 group-hover:scale-110 transition-transform duration-300">
-                      {renderTechIcon(skill.name)}
-                    </div>
-                    <p className="text-slate-700 dark:text-slate-300 font-medium text-sm transition-colors duration-300">
-                      {skill.name}
-                    </p>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Additional Info */}
+        {/* Skills */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          className="mt-16 rounded-xl p-8 border"
-          style={{
-            background: theme === 'dark'
-              ? 'linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(147, 51, 234, 0.15) 100%)'
-              : 'linear-gradient(135deg, rgba(191, 219, 254, 0.6) 0%, rgba(221, 214, 254, 0.6) 100%)',
-            borderColor: theme === 'dark' ? 'rgba(59, 130, 246, 0.3)' : 'rgba(59, 130, 246, 0.4)',
-            transition: 'all 300ms'
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.05,
+              },
+            },
           }}
+          className="flex flex-wrap justify-center gap-3"
         >
-          <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-4 transition-colors duration-300">Always Learning</h3>
-          <p className="text-slate-700 dark:text-slate-400 text-s transition-colors duration-300">
-           I’m constantly exploring new technologies to stay at the forefront of software development. Currently, I’m focusing on AI and Machine Learning, especially fine-tuning models, AI integration, and building intelligent applications using modern ML technologies.
-          </p>
+          {skills.map((skill) => {
+            const Icon = skill.icon;
+
+            return (
+              <motion.div
+                key={skill.name}
+                variants={{
+                  hidden: {
+                    opacity: 0,
+                    y: 10,
+                  },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                  },
+                }}
+                whileHover={{
+                  y: -3,
+                  scale: 1.03,
+                }}
+                className="group flex items-center gap-2.5 bg-white/70 hover:bg-[#364E6B] border border-white/80 rounded-full px-4 py-2.5 shadow-sm hover:shadow-md transition-all duration-300 cursor-default"
+              >
+                <Icon
+                  size={19}
+                  className="text-[#364E6B] group-hover:text-[#B9D7EA] transition-colors duration-300"
+                />
+
+                <span className="text-sm font-medium text-[#364E6B] group-hover:text-white transition-colors duration-300">
+                  {skill.name}
+                </span>
+              </motion.div>
+            );
+          })}
         </motion.div>
       </div>
     </section>

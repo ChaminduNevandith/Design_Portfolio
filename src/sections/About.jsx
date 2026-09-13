@@ -57,6 +57,13 @@ const About = () => {
 
   return (
     <section id="about" className="py-2 bg-[#B9D7EA] backdrop-blur-sm transition-colors duration-300">
+
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-700"></div>
+      </div>
+      
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 bg-[#D6E6F2] p-4 rounded-2xl">
         {/* Section Header */}
         <motion.div

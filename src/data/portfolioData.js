@@ -237,6 +237,14 @@ export const experience = [
     duration: "2024 - 2025",
     description: "Developed and maintained web applications, implemented features using modern technologies, and worked on both frontend and backend development tasks.",
   },
+  {
+    id: 3,
+    title: "Freelancer",
+    company: "Self employed",
+    location: "Kalaniya, Sri Lanka",
+    duration: "2025 - present",
+    description: "Developed and maintained web applications, implemented features using modern technologies, and worked on both frontend and backend development tasks.",
+  },
 ];
 
 export const socialLinks = [
