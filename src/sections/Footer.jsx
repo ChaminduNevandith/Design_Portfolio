@@ -193,7 +193,8 @@ const Footer = () => {
               scale: 0.95,
             }}
             className="w-10 h-10 rounded-lg flex items-center justify-center bg-[#B9D7EA] text-[#364E6B] hover:bg-white transition-all duration-300"
-            aria-label="Scroll to top"
+            aria-label="Scroll to top 
+            "
           >
             <ArrowUp size={20} />
           </motion.button>
