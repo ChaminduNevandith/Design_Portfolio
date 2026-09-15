@@ -47,8 +47,16 @@ const Experience = () => {
   return (
     <section
       id="experience"
-      className="relative py-16 md:py-20 bg-[#B9D7EA] overflow-hidden"
+      className="relative py-12 md:py-20 bg-[#B9D7EA] overflow-hidden"
     >
+
+       {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-700"></div>
+      </div>
+
+
       <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
 
         {/* Header */}
@@ -59,15 +67,15 @@ const Experience = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <p className="text-sm tracking-[0.18em] text-[#364E6B]/70 mb-3">
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#364e6b] mb-3">
             My Journey
           </p>
 
-          <h2 className="text-4xl md:text-6xl font-bold text-[#364E6B]">
+          <h2 className="text-4xl md:text-6xl font-bold text-[#111e2e]">
             Work Experience
           </h2>
 
-          <p className="max-w-xl mx-auto mt-4 text-sm md:text-base text-[#364E6B]/70 leading-6">
+          <p className="max-w-xl mx-auto mt-4 text-sm md:text-base text-[#364e6b]/90 leading-6">
             A few roles and experiences that helped shape my journey as a
             UI/UX designer.
           </p>
@@ -110,7 +118,7 @@ const Experience = () => {
               </div>
 
               {/* Job Title */}
-              <h3 className="text-2xl font-bold leading-tight text-[#364E6B] mb-3">
+              <h3 className="text-2xl font-bold leading-tight text-[#111e2e] mb-3">
                 {job.title}
               </h3>
 
@@ -182,7 +190,7 @@ const Experience = () => {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="w-11 h-11 rounded-full bg-[#364E6B] flex items-center justify-center shadow-md"
+            className="w-11 h-11 rounded-full bg-[#111e2e]/90 flex items-center justify-center shadow-md"
           >
             <ArrowDown
               size={20}

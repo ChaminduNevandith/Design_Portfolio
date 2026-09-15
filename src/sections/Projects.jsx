@@ -34,6 +34,14 @@ const Projects = () => {
       id="projects"
       className="py-16 md:py-20 bg-[#B9D7EA]"
     >
+
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-700"></div>
+      </div>
+
+
       <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
 
         {/* Header */}
@@ -44,15 +52,15 @@ const Projects = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <p className="text-sm tracking-[0.18em] text-[#364E6B]/65 mb-3">
+          <p className="text-sm font-semibold tracking-[0.18em] text-[#364E6B] mb-3">
             Selected Work
           </p>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-[#364E6B]">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#111e2e]">
             UI/UX Projects
           </h2>
 
-          <p className="max-w-xl mx-auto mt-4 text-sm md:text-base leading-6 text-[#364E6B]/70">
+          <p className="max-w-xl mx-auto mt-4 text-sm md:text-base leading-6 text-[#364E6B]/90">
             A selection of web and mobile interfaces designed with simplicity,
             usability, and user experience in mind.
           </p>
@@ -73,10 +81,10 @@ const Projects = () => {
               whileHover={{
                 y: -6,
               }}
-              className="group bg-white rounded-2xl overflow-hidden border border-[#364E6B]/10 shadow-sm hover:shadow-lg transition-all duration-300"
+              className="group bg-[#DCEBF4] rounded-2xl overflow-hidden border border-[#364E6B]/10 shadow-sm hover:shadow-lg transition-all duration-300"
             >
               {/* Project Image */}
-              <div className="relative h-[220px] overflow-hidden bg-[#DCEBF4]">
+              <div className="relative h-[220px] overflow-hidden bg-[#DCEBF4] ">
                 <img
                   src={design.image}
                   alt={design.title}
@@ -95,7 +103,7 @@ const Projects = () => {
               <div className="p-5">
 
                 {/* Title */}
-                <h3 className="text-xl font-bold text-[#364E6B] mb-2">
+                <h3 className="text-xl font-bold text-[#111e2e] mb-2">
                   {design.title}
                 </h3>
 
@@ -110,7 +118,7 @@ const Projects = () => {
                     {design.tools.slice(0, 3).map((tool, i) => (
                       <span
                         key={i}
-                        className="px-3 py-1 rounded-full bg-[#B9D7EA]/45 text-[#364E6B] text-xs font-medium"
+                        className="px-3 py-1 rounded-full bg-[#111e2e]/80 text-[#B9D7EA] text-xs font-medium"
                       >
                         {tool}
                       </span>

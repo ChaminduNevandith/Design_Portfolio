@@ -146,6 +146,13 @@ const Contact = () => {
       id="contact"
       className="py-20 bg-[#B9D7EA] transition-colors duration-300"
     >
+
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-700"></div>
+      </div>
+      
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section Header */}
@@ -166,11 +173,11 @@ const Contact = () => {
           }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#364E6B] mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#111e2e] mb-4">
             Let's Work Together
           </h2>
 
-          <p className="text-[#364E6B]/70 text-lg max-w-2xl mx-auto">
+          <p className="text-[#364E6B]/90 text-base max-w-2xl mx-auto">
             Have a project in mind or want to collaborate? I'd love to hear
             from you. Reach out and let's create something meaningful.
           </p>

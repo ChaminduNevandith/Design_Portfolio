@@ -28,7 +28,14 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-12 bg-[#B9D7EA]">
+    <section id="skills" className="py-12 pt-20 bg-[#B9D7EA]">
+
+       {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-700"></div>
+      </div>
+
 
       
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
@@ -41,15 +48,15 @@ const Skills = () => {
           viewport={{ once: true }}
           className="text-center mb-8"
         >
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#364E6B]/60 mb-2">
+          <p className="text-sm font-semibold uppercase text-[#364e6b] mb-2">
             What I Work With
           </p>
 
-          <h2 className="text-3xl md:text-4xl font-bold text-[#364E6B]">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#111e2e]">
             Skills & Tools
           </h2>
 
-          <p className="text-[#364E6B]/70 mt-3 text-sm md:text-base max-w-xl mx-auto">
+          <p className="text-[#364e6b]/90 mt-3 text-sm md:text-base font-medium max-w-xl mx-auto">
             A few tools and design skills I use to create clean and
             user-friendly digital experiences.
           </p>
