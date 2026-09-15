@@ -1,28 +1,22 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
-  Code,
-  User,
   Mail,
+  User,
+  Code,
   Share2,
   ArrowUp,
 } from "lucide-react";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
   };
-
-  const footerLinks = [
-    { label: "Home", href: "#home" },
-    { label: "About", href: "#about" },
-    { label: "Skills", href: "#skills" },
-    { label: "Projects", href: "#projects" },
-    { label: "Contact", href: "#contact" },
-  ];
 
   const socialLinks = [
     {
@@ -47,160 +41,161 @@ const Footer = () => {
     },
   ];
 
-  const currentYear = new Date().getFullYear();
-
   return (
-    <footer className="bg-[#364E6B] border-t border-white/10">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <footer className="relative bg-[#B9D7EA] overflow-hidden">
 
-        {/* Main Footer */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+      {/* Top Curve */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[160%] h-28 md:h-36 bg-[#364E6B] rounded-b-[50%]" />
 
-          {/* Brand */}
+      {/* Bottom Curve */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[160%] h-28 md:h-36 bg-[#364E6B] rounded-t-[50%]" />
+
+      <div className="relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pt-36 md:pt-44 pb-36 md:pb-44">
+
+        {/* Main Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+
+          {/* Left Side */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="space-y-4"
+            initial={{
+              opacity: 0,
+              x: -30,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            transition={{
+              duration: 0.7,
+            }}
+            viewport={{
+              once: true,
+            }}
           >
-            <div className="flex items-center gap-3">
+            <p className="text-sm uppercase tracking-[0.25em] text-[#364E6B]/60 mb-4">
+              UI / UX Designer
+            </p>
 
-              <div className="w-9 h-9 bg-[#B9D7EA] rounded-lg flex items-center justify-center">
-                <span className="text-[#364E6B] font-bold text-lg">
-                  C
-                </span>
-              </div>
-
-              <span className="font-bold text-xl text-white">
-                My Portfolio
+            <h2 className="text-[65px] sm:text-[90px] md:text-[120px] lg:text-[140px] leading-[0.8] font-bold tracking-[-0.06em] text-[#364E6B]">
+              Let’s
+              <span className="block text-white">
+                create.
               </span>
+            </h2>
 
-            </div>
-
-            <p className="text-sm text-[#B9D7EA]/75 max-w-xs leading-6">
-              Creating simple and user-friendly digital experiences through
-              thoughtful UI/UX design.
+            <p className="mt-8 max-w-md text-[#364E6B]/70 leading-7">
+              Have an idea, project, or opportunity in mind? I’m always open
+              to creating simple and meaningful digital experiences together.
             </p>
           </motion.div>
 
-          {/* Quick Links */}
+          {/* Right Side */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{
+              opacity: 0,
+              x: 30,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
             transition={{
-              duration: 0.5,
+              duration: 0.7,
               delay: 0.1,
             }}
-            viewport={{ once: true }}
-            className="space-y-4"
-          >
-            <h3 className="font-semibold text-white">
-              Quick Links
-            </h3>
-
-            <nav className="space-y-2">
-              {footerLinks.map((link, index) => (
-                <a
-                  key={index}
-                  href={link.href}
-                  className="block text-sm text-[#B9D7EA]/75 hover:text-white transition-colors duration-300"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </nav>
-          </motion.div>
-
-          {/* Social */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 0.5,
-              delay: 0.2,
+            viewport={{
+              once: true,
             }}
-            viewport={{ once: true }}
-            className="space-y-4"
+            className="lg:pl-10"
           >
-            <h3 className="font-semibold text-white">
-              Connect
-            </h3>
+            {/* Email */}
+            <div className="mb-8">
+              <p className="text-xs uppercase tracking-[0.2em] text-[#364E6B]/50 mb-3">
+                Get in touch
+              </p>
 
-            <div className="flex gap-3">
-              {socialLinks.map((link, index) => {
-                const Icon = link.icon;
+              <a
+                href="mailto:cnewandith123@gmail.com"
+                className="group flex items-center gap-3 text-lg md:text-xl text-[#364E6B] font-medium"
+              >
+                <Mail size={20} />
 
-                return (
-                  <a
-                    key={index}
-                    href={link.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={link.label}
-                    className="w-10 h-10 rounded-lg flex items-center justify-center bg-white/10 text-[#B9D7EA] hover:bg-[#B9D7EA] hover:text-[#364E6B] hover:scale-110 transition-all duration-300"
-                  >
-                    <Icon size={19} />
-                  </a>
-                );
-              })}
+                <span className="relative">
+                  cnewandith123@gmail.com
+
+                  <span className="absolute left-0 -bottom-1 w-0 h-[1px] bg-[#364E6B] group-hover:w-full transition-all duration-300" />
+                </span>
+              </a>
+            </div>
+
+            {/* Divider */}
+            <div className="w-full h-px bg-[#364E6B]/20 mb-8" />
+
+            {/* Social Links */}
+            <div>
+              <p className="text-xs uppercase tracking-[0.2em] text-[#364E6B]/50 mb-4">
+                Find me online
+              </p>
+
+              <div className="flex gap-3">
+                {socialLinks.map((link) => {
+                  const Icon = link.icon;
+
+                  return (
+                    <motion.a
+                      key={link.label}
+                      href={link.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={link.label}
+                      whileHover={{
+                        y: -4,
+                        rotate: -3,
+                      }}
+                      whileTap={{
+                        scale: 0.95,
+                      }}
+                      className="w-11 h-11 rounded-full border border-[#364E6B]/25 text-[#364E6B] flex items-center justify-center hover:bg-[#364E6B] hover:text-[#B9D7EA] transition-all duration-300"
+                    >
+                      <Icon size={18} />
+                    </motion.a>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Copyright */}
+            <div className="mt-10 text-sm text-[#364E6B]/55">
+              © {currentYear} Chamindu Nevandith
             </div>
           </motion.div>
-
         </div>
 
-        {/* Divider */}
-        <div className="border-t border-white/10 my-8" />
+        {/* Bottom Row */}
+        <div className="mt-16 pt-6 border-t border-[#364E6B]/20 flex flex-col sm:flex-row items-center justify-between gap-4">
 
-        {/* Bottom */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-xs text-[#364E6B]/50">
+            Designed with simplicity and usability in mind.
+          </p>
 
-          {/* Copyright */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{
-              duration: 0.5,
-              delay: 0.3,
-            }}
-            viewport={{ once: true }}
-            className="text-sm text-[#B9D7EA]/70 text-center md:text-left"
-          >
-            <span>
-              © {currentYear} All rights reserved.
-            </span>
-
-            <span className="ml-1">
-              Built by Chamindu Nevandith
-            </span>
-          </motion.div>
-
-          {/* Scroll Top */}
           <motion.button
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{
-              duration: 0.5,
-              delay: 0.3,
-            }}
-            viewport={{ once: true }}
             onClick={scrollToTop}
             whileHover={{
               y: -3,
-              scale: 1.05,
             }}
             whileTap={{
               scale: 0.95,
             }}
-            className="w-10 h-10 rounded-lg flex items-center justify-center bg-[#B9D7EA] text-[#364E6B] hover:bg-white transition-all duration-300"
-            aria-label="Scroll to top 
-            "
+            className="flex items-center gap-2 text-xs font-medium text-[#364E6B]"
+            aria-label="Scroll to top"
           >
-            <ArrowUp size={20} />
+            Back to top
+
+            <span className="w-8 h-8 rounded-full bg-[#364E6B] text-[#B9D7EA] flex items-center justify-center">
+              <ArrowUp size={14} />
+            </span>
           </motion.button>
-
         </div>
-
       </div>
     </footer>
   );
